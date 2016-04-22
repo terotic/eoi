@@ -1,9 +1,11 @@
 <html>
 <head>
   <title>EHD Client Test</title>
+  <link href="css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
 </head>
 <body>
-  <div id='log'></div>
+  <div id='chat-1'><div id='log'></div></div>
+  <div id='chat-2'></div>
   <script src="http://ehd2016.azurewebsites.net/socket.io/socket.io.js"></script>
   <script>
       var socket = io('http://ehd2016.azurewebsites.net');
