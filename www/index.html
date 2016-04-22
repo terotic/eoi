@@ -4,20 +4,20 @@
 </head>
 <body>
   <div id='log'></div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
   <script src="http://ehd2016.azurewebsites.net/socket.io/socket.io.js"></script>
+  <script src="js/eoi.js"></script>
+  <canvas id="canvas" width="640" height="640"></canvas>
   <script>
-      var socket = io('http://ehd2016.azurewebsites.net');
-      console.log(socket);
-      socket.on('connection', function() {
-          socket.emit('subscribe', 'muse0');
-	  console.log("moi");
-      })
-      socket.on('data', function (data) {
-	console.log("yo");
-          if(data.room === 'muse0') {
-              console.log(data);
-              document.getElementById('log').innerHTML = JSON.stringify(data);
-          }
-      });
+/*
+      var p1 = [1,2,3,4,5,6,7,8,9];
+      var p2 = [2,3,4,5,6,7,8,9,10];
+      var res = [];
+      for (var i = 0; i < p1.length; i++) {
+        res.push(Math.abs(p1[i] - p2[i]));
+      }
+
+      _.sum(p3);
+*/
   </script>
 </body>
