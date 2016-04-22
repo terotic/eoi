@@ -70,21 +70,22 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 /* line 8, ../sass/screen.scss */
 body {
   background-color: #dddddd;
+  font-family: 'Work Sans', sans-serif;
 }
 
-/* line 12, ../sass/screen.scss */
+/* line 13, ../sass/screen.scss */
 #chat-1, #chat-2 {
   width: 50%;
   height: 100%;
   float: left;
 }
 
-/* line 18, ../sass/screen.scss */
+/* line 19, ../sass/screen.scss */
 #chat-1 {
   background-color: #c276de;
 }
 
-/* line 23, ../sass/screen.scss */
+/* line 24, ../sass/screen.scss */
 #chat-2 {
   background-color: #47a4c6;
 }
