@@ -7,11 +7,14 @@
   <script src="http://ehd2016.azurewebsites.net/socket.io/socket.io.js"></script>
   <script>
       var socket = io('http://ehd2016.azurewebsites.net');
+      console.log(socket);
       socket.on('connection', function() {
-          socket.emit('subscribe', 'muse');
+          socket.emit('subscribe', 'muse0');
+	  console.log("moi");
       })
       socket.on('data', function (data) {
-          if(data.room === 'muse') {
+	console.log("yo");
+          if(data.room === 'muse0') {
               console.log(data);
               document.getElementById('log').innerHTML = JSON.stringify(data);
           }
