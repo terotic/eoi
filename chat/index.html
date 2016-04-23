@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Catmoji.me</title>
+    <style>
+	@font-face {
+  		font-family: Roboto-Regular;
+		src: url('/fnt/Roboto-Regular.ttf');
+	}
+      	* { margin: 0; padding: 0; box-sizing: border-box; font: Roboto-Regular; }
+      	body { font: 32px Roboto-Regular; }
+      	form { background: #fff; padding: 3px; position: fixed; bottom: 0; width: 100%; height: 70px; border-top: 1px solid #eaeaea; margin-left: 0.7%}
+      	form input { margin-top: 0%; margin-left: 0%; padding: 10px; padding-left: 0; width: 85%; margin-right: .5%; display: inline-block; float: left; background-color: white; height: 69px; appearance: none; box-shadow: none!important; 
+		-webkit-box-shadow: none !important;
+		-moz-box-shadow: none !important;
+		box-shadow: none;
+		font-size: 32px;
+		font: 32px Roboto-Regular; 
+		appearance: none;
+		-webkit-appearance: none;
+		border: 0;
+	}
+	input:focus {
+		outline: 0;
+	}
+
+	
+      form button { margin-top: 1%; width: 9%; background: #afb42b; border: none; padding: 10px; position: absolute; right: 0; bottom: 0; width: 69px; height: 69px; color: #cddc39; font-size: 48px;}
+      #messages { list-style-type: none; margin: 0; padding: 0; margin-top: 50px; margin-bottom: 70px; }
+      #messages li { padding: 5px 10px; height: 70px; vertical-align: middle;}
+      #messages li:nth-child(odd) { background: #fff; }
+      #topnav { position: fixed; top: 0; left: 0; overflow: auto; z-index: 222; width: 100%; height: 50px; background: #cddc39 url('img/catmoji_logo_white.png') no-repeat 1.3% center ; background-size: 160px ; border-bottom: 5px solid #eaeaea; color: white; font-size: 10px; float: right; vertical-align: middle; display: inline; text-align: right}
+	#topnav a { color: white; }
+      .valence1 { width: 64px; height: 64px; background: url('/img/catmojis.png') 0px -64px no-repeat; display: inline-block; float: left; margin-right: 1% }
+      .valence2 { width: 64px; height: 64px; background: url('/img/catmojis.png') -64px -64px no-repeat; display: inline-block; float: left; margin-right: 1% }
+      .valence3 { width: 64px; height: 64px; background: url('/img/catmojis.png') -128px -64px no-repeat; display: inline-block; float: left; margin-right: 1% }
+      #emoji { width: 64px; height: 64px; display: inline-block; float: left; }
+    </style>
+  </head>
+  <body>
+	<div id="topnav"> EMOJIS: <br/><a href="emojione.com">emojione.com</a></div>
+	<div>
+    		<ul id="messages"></ul>
+    		<form action="">
+      			<div class="emoji"> </div><input id="m" autocomplete="off" /><button>&#10148;</button>
+    		</form>
+	</div>
+    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+    <script>
+      var socket = io();
+	var valence = 2;
+
+      $('form').submit(function(){
+	var s = "";
+	if (valence == 1) { s = ":("; }
+	if (valence == 2) { s = ""; }
+	if (valence == 3) { s = ":)"; }
+        socket.emit('chat message', "<div class=\"valence" + valence + "\"> </div>" + $('#m').val() + " " + s);
+        $('#m').val('');
+        return false;
+      });
+      socket.on('chat message', function(msg){
+        $('#messages').append($('<li>').html(msg));
+	$("body").scrollTop(1300000);
+      });
+
+	readData();
+
+	function readData() {
+		$.getJSON( "data.json", function( data ) {
+			valence = Math.ceil(((data.valence) + 100 ) / 66.5);
+			for (i = 1; i <= 3; i++) {
+				if (i == valence) {
+					$(".emoji").addClass("valence" + i);
+				} else {
+					$(".emoji").removeClass("valence" + i);
+				}
+			}
+		});
+		setTimeout(readData, 200);
+	} 
+    </script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-66897988-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>
