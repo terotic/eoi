@@ -25,32 +25,24 @@ $( document ).ready(function() {
     });
 //document.getElementById('log').innerHTML();
 
-    function line() {
+    function line(canvas, dataArr) {
         //console.log("line");
-        var canvas = document.getElementById("canvas");
         var ctx = canvas.getContext("2d");
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-
         ctx.strokeStyle = "#FF0000";
         ctx.moveTo(0,0);
         ctx.beginPath();
         for (var i = 0; i < len; i++) {
             //console.log(dataArr[i]);
-            ctx.lineTo(i*10, dataArr0[i]);
+            ctx.lineTo(i*10, dataArr[i]);
         }
         ctx.stroke();
 
-        ctx.strokeStyle = "#0000FF";
-        ctx.moveTo(0,0);
-        ctx.beginPath();
-        for (var i = 0; i < len; i++) {
-            ctx.lineTo(i*10, dataArr1[i]);
-        }
-        ctx.stroke();
         setTimeout(line, 100);
         //console.log("line-end");
     }
-
-    line();
+  
+    line(document.getElementById("canvas0"),dataArr0);
+    line(document.getElementById("canvas1"),dataArr1);
 });
 

@@ -5,8 +5,19 @@
   <link href='https://fonts.googleapis.com/css?family=Work+Sans:400,100,200,300,500,600,700,800,900' rel='stylesheet' type='text/css'>
 </head>
 <body>
-  <div id='chat-1'><div id='log'></div></div>
-  <div id='chat-2'><canvas id="canvas" width="640" height="640"></canvas></div>
+  <div id='chat-1'>
+    <div id='log'></div>
+    <div class="bubble-0 variation-0">Hello</div>
+    <div class="bubble-0 variation-1">tired?</div>
+    <canvas id="canvas0" width="640" height="640"></canvas>
+  </div>
+  
+  <div id='chat-2'>
+    <div class="bubble-1 variation-2">Good night</div>
+    <div class="bubble-1 variation-3">Very sleepy</div>
+    <canvas id="canvas1" width="640" height="640"></canvas>
+  </div>
+  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
   <script src="http://ehd2016.azurewebsites.net/socket.io/socket.io.js"></script>
   <script src="js/eoi.js"></script>

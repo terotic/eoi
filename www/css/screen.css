@@ -111,6 +111,49 @@ body {
   animation: AnimationName 30s ease infinite;
 }
 
+/* line 49, ../sass/screen.scss */
+.bubble-0 {
+  font-size: 2em;
+  font-weight: 300;
+  padding: 1em;
+  margin: .5em;
+  background-color: azure;
+  border-top: solid 10px #666699;
+}
+
+/* line 58, ../sass/screen.scss */
+.bubble-1 {
+  font-size: 2em;
+  font-weight: 800;
+  padding: 1em;
+  margin: .5em;
+  border-top: solid 10px #996666;
+}
+
+/* line 66, ../sass/screen.scss */
+.variation-0 {
+  font-weight: 800;
+  background-color: coral;
+}
+
+/* line 71, ../sass/screen.scss */
+.variation-1 {
+  font-weight: 100;
+  background-color: darkgoldenrod;
+}
+
+/* line 76, ../sass/screen.scss */
+.variation-2 {
+  font-weight: 400;
+  background-color: darksalmon;
+}
+
+/* line 81, ../sass/screen.scss */
+.variation-3 {
+  font-weight: 200;
+  background-color: darkseagreen;
+}
+
 @-webkit-keyframes AnimationName {
   0% {
     background-position: 0% 50%;

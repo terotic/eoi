@@ -46,7 +46,42 @@ body {
   animation: AnimationName 30s ease infinite;
 }
 
+.bubble-0 {
+  font-size: 2em;
+  font-weight: 300;
+  padding: 1em;
+  margin: .5em;
+  background-color: azure;
+  border-top: solid 10px #666699;
+}
 
+.bubble-1 {
+  font-size: 2em;
+  font-weight: 800;
+  padding: 1em;
+  margin: .5em;
+  border-top: solid 10px #996666;
+}
+
+.variation-0 {
+  font-weight: 800;
+  background-color: coral;
+}
+
+.variation-1 {
+  font-weight: 100;
+  background-color: darkgoldenrod;
+}
+
+.variation-2 {
+  font-weight: 400;
+  background-color: darksalmon;
+}
+
+.variation-3 {
+  font-weight: 200;
+  background-color: darkseagreen;
+}
 @-webkit-keyframes AnimationName {
     0%{background-position:0% 50%}
     50%{background-position:100% 50%}
