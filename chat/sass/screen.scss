@@ -1,0 +1,222 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+
+$mecolor: #80bef1;
+$youcolor: #39d2bc;
+$brandcolor: #557ae0;
+
+html {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Work Sans', sans-serif;
+}
+
+        * {
+
+            box-sizing: border-box;
+            
+        }
+
+        body {
+          background-color: #dddddd;
+          //border: solid 6px #557ae0;
+          width: 100%;
+          height: 100%;
+        }
+
+        form.chatbox {
+            background: $mecolor;
+            //padding: 3px;
+            position: fixed;
+            right: 180px;
+            z-index: 6666;
+            bottom: 1em;
+            width: 400px;
+            height: 64px;
+            //border-top: 1px solid #eaeaea;
+            margin: 1em;
+        }
+
+        .input-box-label {
+            width: 64px;
+            height: 64px;
+            padding: 7px;
+            font-size: 1.333em;
+            line-height: 50px;
+            text-align: center;
+            display: inline-block;
+            float: left;
+        }
+
+        form.chatbox input {
+            font-family: 'Work Sans', sans-serif;
+            font-weight: 600;
+            height: 64px;
+            margin-top: 0;
+            margin-left: 0;
+            padding: 0 24px;
+            width: 272px ;
+            display: inline-block;
+            float: left;
+            background-color: white;
+            appearance: none;
+            box-shadow: none !important;
+            -webkit-box-shadow: none !important;
+            -moz-box-shadow: none !important;
+            box-shadow: none;
+            font-size: 1.333em;
+            appearance: none;
+            -webkit-appearance: none;
+            border: 0;
+        }
+
+        input:focus {
+            outline: 0;
+        }
+
+        form.chatbox button {
+            //margin-top: 1%;
+            width: 9%;
+            background: $mecolor;
+            border: none;
+            padding: 10px;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 64px;
+            height: 64px;
+            color: #FFFFFF;
+            font-size: 48px;
+        }
+        
+        #messages {
+            position: fixed;
+            width: 500px;
+            height: 75%;
+            //border-top: 4px solid #333333;
+            //border-bottom: 4px solid #333333;
+            overflow: auto;
+            top: 0;
+            right: 200px;
+            z-index: 5000;
+            //background-color: rgba(#9ee0a0, 20);
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            margin-top: 50px;
+            margin-bottom: 70px;
+            li {
+              width: 60%;
+              padding: 1em;
+              margin: .5em;
+              vertical-align: middle;
+            }
+            .me-bubble {
+              background-color: rgba($mecolor, .6);
+              text-align: right;
+              margin-left: 40%;
+              border-right: 6px solid $mecolor;
+            }
+
+            .you-bubble {
+              background-color: rgba($youcolor, .6);
+              text-align: left; 
+              margin-right: 40%;
+              border-left: 6px solid $youcolor;
+            }
+            .bubble-who {
+              font-weight: 700;
+              //float:left;
+            }
+        }
+
+
+        #topnav {
+            position: fixed;
+            top: 1em;
+            right: 1em;
+            overflow: auto;
+            z-index: 7000;
+            width: 100%;
+            height: 6em;
+            color: white;
+            vertical-align: middle;
+            display: inline;
+            text-align: right;
+            .chat-logo {
+              float: right;
+              width: 30%;
+              height: 100%;
+              background: url('../img/ilmi-logo-01.svg') no-repeat;
+              background-position: top right;
+              background-size: contain;
+            }
+        }
+
+        #topnav a {
+            color: white;
+        }
+
+        .valence1 {
+            width: 64px;
+            height: 64px;
+            background: url('../img/catmojis.png') 0px -64px no-repeat;
+            display: inline-block;
+            float: left;
+            margin-right: 1%
+        }
+
+        .valence2 {
+            width: 64px;
+            height: 64px;
+            background: url('../img/catmojis.png') -64px -64px no-repeat;
+            display: inline-block;
+            float: left;
+            margin-right: 1%
+        }
+
+        .valence3 {
+            width: 64px;
+            height: 64px;
+            background: url('../img/catmojis.png') -128px -64px no-repeat;
+            display: inline-block;
+            float: left;
+            margin-right: 1%
+        }
+
+        #emoji {
+            width: 64px;
+            height: 64px;
+            display: inline-block;
+            float: left;
+        }
+
+
+.me-face {
+  background-color: blue;
+  position: absolute;
+  bottom: 2em;
+  right: 1em;
+  width: 200px;
+  height: 200px;
+  background: url('../img/ilmi-faces-02-poika.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.you-face {
+  background-color: darkorchid;
+  position: absolute;
+  bottom: 120px;
+  left: 2em;
+  width: 500px;
+  height: 500px; 
+  background: url('../img/ilmi-faces-02-nainen.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}

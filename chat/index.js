@@ -6,17 +6,26 @@ app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');
 });
 
+app.get('/css/screen.css', function(req, res){
+  res.sendFile(__dirname + '/css/screen.css');
+});
+
 app.get('/img/catmojis.png', function(req, res){
   res.sendFile(__dirname + '/img/catmojis.png');
 });
 
-app.get('/img/catmoji_logo_white.png', function(req, res){
-  res.sendFile(__dirname + '/img/catmoji_logo_white.png');
+app.get('/img/ilmi-faces-02-poika.png', function(req, res){
+  res.sendFile(__dirname + '/img/ilmi-faces-02-poika.png');
 });
 
-app.get('/fnt/Roboto-Regular.ttf', function(req, res){
-  res.sendFile(__dirname + '/fnt/Roboto-Regular.ttf');
+app.get('/img/ilmi-faces-02-nainen.png', function(req, res){
+  res.sendFile(__dirname + '/img/ilmi-faces-02-nainen.png');
 });
+
+app.get('/img/ilmi-logo-01.svg', function(req, res){
+  res.sendFile(__dirname + '/img/ilmi-logo-01.svg');
+});
+
 
 app.get('/data.json', function(req, res){
   res.sendFile(__dirname + '/data.json');
